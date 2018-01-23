@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 60px;
+  padding: 1em;
+  color: white;
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-todo {
+  text-align: left;
+  border: thin solid rgb(117, 116, 116);
+  margin: 0.25em;
+}
+
+.App-todo-p {
+  margin-top: -1.5em;
+  margin-left: 2em;
+  background-color: white;
+  width: 5em;
+  font-weight: bold;
+}
+
+.App-todo-input {
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+}
+
+.App-todo-input-form {
+  display: -webkit-inline-flex;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  line-height: 0.1em;
+}
+
+.App-todo-output {
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  padding-top: 1em;
+}
+
+th {
+  width: 25em;
+}
+
+td {
+  border-top: thin solid rgba(161, 156, 156, 0.5);
+  border-bottom: thin solid rgba(161, 156, 156, 0.5);
+}
