@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import TodoTable from './TodoTable';
 
 class App extends Component {
   constructor(props) {
@@ -21,8 +22,9 @@ class App extends Component {
 
   deleteTodo = (event) => {
     const index = +event.target.id;
+    event.preventDefault();
     this.setState({
-      todos: this.state.todos.filter((todo, i) => i !== index)
+        todos: this.state.todos.filter((todo, i) => i !== index)
     });
 }
 
@@ -51,19 +53,7 @@ class App extends Component {
           </div>   
         </div>     
 
-        <div className="App-todo-output">
-          <tr>
-            <th>Date: </th>
-            <th>Description: </th>
-          </tr>
-
-          {this.state.todos.map((item, index) => 
-            <tr key={index}>
-              <td>{item.date}</td>
-              <td>{item.description}</td>
-              <td><input id={index} type="submit" value="Delete" onClick={this.deleteTodo} /></td>
-            </tr>)}
-        </div>
+        <TodoTable todos={this.state.todos} onClick = {this.deleteTodo}/>
 
       </div>
     );
