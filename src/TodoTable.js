@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 class TodoTable extends Component {
     constructor(props) {
         super(props);
       }
 
-
     render() {
+
+        const columns = [{
+            Header: 'Date',
+            accessor: 'date',
+        },
+        {
+            Header: 'Description',
+            accessor: 'description',
+        }]
+
         return (
         <div className="App">
-            <table>
-            <tbody>
-                <tr>
-                    <th>Date: </th>
-                    <th>Description: </th>
-                </tr>
 
-                {this.props.todos.map((item, index) => 
-                <tr key={index}>
-                <td>{item.date}</td>
-                <td>{item.description}</td>
-                <td><input id={index} type="submit" value="Delete" onClick={this.props.onClick} /></td>
-                </tr>)}
-            </tbody>
-            </table>
+            <ReactTable data={this.props.todos}
+                columns={columns} sortable='true'
+                defaultPageSize='10' />
         </div>
         );
     }
